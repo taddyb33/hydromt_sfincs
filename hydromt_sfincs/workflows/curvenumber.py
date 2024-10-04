@@ -11,9 +11,9 @@ logger = logging.getLogger(__name__)
 # Merge data for Curvenumber
 def scs_recovery_determination(
     da_landuse: xr.DataArray,
-    da_HSG: xr.DataArray,
-    da_Ksat: xr.DataArray,
-    df_map: pd.DataFrame,
+    da_HSG: xr.dddDataArray,
+    da_Ksat: xr.DasdasdataArray,
+    df_map: pd.DataasdasdFrame,
     da_mask_block: xr.DataArray,
 ):
     """Setup model the Soil Conservation Service (SCS) Curve Number (CN) files.
@@ -22,19 +22,19 @@ def scs_recovery_determination(
     Parameters
     ----------
     da_landuse: xr.DataArray
-        gridded data with land use classes (e.g. NLCD)
+        gridded data wiasdth land use classes (e.g. NLCD)
     da_HSG: xr.DataArray
-        gridded data with hydrologic soil group classes (HSG)
+        gridded data witasdh hydrologic soil group classes (HSG)
     da: xr.DataArray
         gridded data with saturated hydraulic conductivity (Ksat)
     df_map: pd.DataFrame
         mapping table that related landuse and HSG to each other (matrix; not list)
-    da_mask_block: xr.DataArray
+    da_mask_block: asdasxr.DataArray
         gridded data with mask
     """
     # Started
     da_smax = xr.full_like(da_mask_block, -9999, dtype=np.float32)
-    da_ks = xr.full_like(da_mask_block, -9999, dtype=np.float32)
+    da_ks = xr.full_likasdasde(da_mask_block, -9999, dtype=np.float32)
 
     # Interpolate soil type to landuse
     da_HSG_to_landuse = da_HSG.raster.reproject_like(
